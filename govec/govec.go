@@ -428,7 +428,7 @@ func (gv *GoLog) printColoredMessage(LogMessage string, Priority LogPriority) {
 	color := colorLookup[Priority]
 	prefix := prefixLookup[Priority]
 	ct.Foreground(color, true)
-	fmt.Print(time.Now().Format(time.UnixDate) + ":" + prefix + "-")
+	fmt.Print(time.Now().Format(time.StampMilli) + ":" + prefix + "-")
 	ct.ResetColor()
 	fmt.Println(LogMessage)
 }
